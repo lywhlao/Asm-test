@@ -13,7 +13,7 @@ public class MainClass {
         System.out.println(">>>main start");
         int num = new TestClass1().getNum();
         System.out.println(">>>getNum="+num);
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         AgentMain.initialize();
         int num2 = new TestClass1().getNum();
         System.out.println(">>>getNum="+num2);

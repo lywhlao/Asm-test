@@ -16,6 +16,7 @@ public class AgentMain {
         Class[] allLoadedClasses = ins.getAllLoadedClasses();
         for(Class<?> temp:allLoadedClasses){
             if(temp.getName().equals("TestClass1")){
+                System.out.println(">>>apply transformer");
                 ins.addTransformer(new Transformer(),true);
                 ins.retransformClasses(temp);
             }
