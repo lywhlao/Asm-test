@@ -8,6 +8,7 @@ import java.lang.management.ManagementFactory;
 public class MyJavaAgentLoader {
 
 
+    //TODO 修改路径
     private static final String jarFilePath = "C:\\Users\\hzlaojiaqi\\Desktop\\activity-project\\Asm-test\\target\\asm-test-1.0-SNAPSHOT-jar-with-dependencies.jar";
 
     public static void loadAgent() {
