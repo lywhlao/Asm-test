@@ -4,6 +4,10 @@
 public class TestClass2 {
 
     public int getNum(){
-        return 2;
+        long time=System.currentTimeMillis();
+        int a=2;
+        long time2=System.currentTimeMillis();
+        System.out.println(time2-time);
+        return a;
     }
 }
