@@ -35,8 +35,15 @@ public class TimeMethodVisitor extends MethodVisitor {
            mv.visitInsn(LADD);
            mv.visitFieldInsn(PUTSTATIC, "time/TestTime", "timer", "J");
            mv.visitFieldInsn(GETSTATIC, "java/lang/System", "out", "Ljava/io/PrintStream;");
+           mv.visitTypeInsn(NEW, "java/lang/StringBuilder");
+           mv.visitInsn(DUP);
+           mv.visitMethodInsn(INVOKESPECIAL, "java/lang/StringBuilder", "<init>", "()V", false);
+           mv.visitLdcInsn("time is-->");
+           mv.visitMethodInsn(INVOKEVIRTUAL, "java/lang/StringBuilder", "append", "(Ljava/lang/String;)Ljava/lang/StringBuilder;", false);
            mv.visitFieldInsn(GETSTATIC, "time/TestTime", "timer", "J");
-           mv.visitMethodInsn(INVOKEVIRTUAL, "java/io/PrintStream", "println", "(J)V", false);
+           mv.visitMethodInsn(INVOKEVIRTUAL, "java/lang/StringBuilder", "append", "(J)Ljava/lang/StringBuilder;", false);
+           mv.visitMethodInsn(INVOKEVIRTUAL, "java/lang/StringBuilder", "toString", "()Ljava/lang/String;", false);
+           mv.visitMethodInsn(INVOKEVIRTUAL, "java/io/PrintStream", "println", "(Ljava/lang/String;)V", false);
         }
         mv.visitInsn(opcode);
     }

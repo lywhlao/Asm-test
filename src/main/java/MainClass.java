@@ -1,3 +1,6 @@
+import time.TestOrigin;
+import time.TestTime;
+
 /**
  * Created by hzlaojiaqi on 2017/12/14.
  */
@@ -6,7 +9,6 @@ public class MainClass {
 
     static {
         System.out.println(">>>init");
-//        AgentMain.initialize();
     }
 
     public static void main(String[] args) throws InterruptedException {
@@ -18,7 +20,10 @@ public class MainClass {
         Thread.sleep(1000);
         AgentMain.initialize();
 
-        int num2 = new TestClass1().getNum();
-        System.out.println(">>>2.getNum="+num2);
+        TestOrigin testOrigin=new TestOrigin();
+        testOrigin.m();
+
+//        int num2 = new TestClass1().getNum();
+//        System.out.println(">>>2.getNum="+num2);
     }
 }

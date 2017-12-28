@@ -16,15 +16,14 @@ public class TimeTransForm implements ClassFileTransformer{
     @Override
     public byte[] transform(ClassLoader loader, String className, Class<?> classBeingRedefined,
                             ProtectionDomain protectionDomain, byte[] classfileBuffer) throws IllegalClassFormatException {
-        if(!className.equals("TestClass1")){
+        if(!className.equals("time/TestOrigin")){
             return null;
         }
         ClassReader cr=new ClassReader(classfileBuffer);
-        ClassWriter cw=new ClassWriter(ClassWriter.COMPUTE_MAXS);
+        ClassWriter cw=new ClassWriter(cr,ClassWriter.COMPUTE_MAXS);
         TimeClassVisitor tcv=new TimeClassVisitor(cw);
 
         cr.accept(tcv,0);
-
         return cw.toByteArray();
     }
 }

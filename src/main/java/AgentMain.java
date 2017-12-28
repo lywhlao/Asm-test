@@ -17,21 +17,21 @@ public class AgentMain {
      */
     public static void agentmain(String args, Instrumentation ins) throws UnmodifiableClassException {
         Class[] allLoadedClasses = ins.getAllLoadedClasses();
-        for(Class<?> temp:allLoadedClasses){
-            if(temp.getName().equals("TestClass1")){
-                System.out.println(">>>apply transformer");
-                ins.addTransformer(new Transformer(),true);
-                ins.retransformClasses(temp);
-            }
-        }
-
-//        for (Class<?> temp : allLoadedClasses) {
-//            if (temp.getName().equals("TestClass1")) {
+//        for(Class<?> temp:allLoadedClasses){
+//            if(temp.getName().equals("TestClass1")){
 //                System.out.println(">>>apply transformer");
-//                ins.addTransformer(new TimeTransForm(), true);
+//                ins.addTransformer(new Transformer(),true);
 //                ins.retransformClasses(temp);
 //            }
 //        }
+
+        for (Class<?> temp : allLoadedClasses) {
+            if (temp.getName().equals("TestClass1")) {
+                System.out.println(">>>apply transformer");
+                ins.addTransformer(new TimeTransForm(), true);
+                ins.retransformClasses(temp);
+            }
+        }
         instrumentation = ins;
     }
 

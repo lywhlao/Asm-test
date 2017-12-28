@@ -5,6 +5,6 @@ package time;
  */
 public class TestOrigin {
     public void m() throws InterruptedException {
-        Thread.sleep(100);
+        Thread.sleep(123);
     }
 }

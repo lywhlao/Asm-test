@@ -30,4 +30,9 @@ public class TimeClassVisitor extends ClassVisitor{
         return mv;
     }
 
+    @Override
+    public void visitEnd() {
+        cv.visitField(Opcodes.ACC_PUBLIC+Opcodes.ACC_STATIC,"timer","J",null,null);
+        cv.visitEnd();
+    }
 }

@@ -8,8 +8,8 @@ public class TestTime {
 
     public void m() throws InterruptedException {
         timer -= System.currentTimeMillis();
-        Thread.sleep(100);
+        Thread.sleep(1234);
         timer += System.currentTimeMillis();
-        System.out.println(timer);
+        System.out.println("time is-->"+timer);
     }
 }
