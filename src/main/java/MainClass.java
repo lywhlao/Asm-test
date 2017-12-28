@@ -11,11 +11,14 @@ public class MainClass {
 
     public static void main(String[] args) throws InterruptedException {
         System.out.println(">>>main start");
+
         int num = new TestClass1().getNum();
-        System.out.println(">>>getNum="+num);
+        System.out.println(">>>1.getNum="+num);
+
         Thread.sleep(1000);
         AgentMain.initialize();
+
         int num2 = new TestClass1().getNum();
-        System.out.println(">>>getNum="+num2);
+        System.out.println(">>>2.getNum="+num2);
     }
 }

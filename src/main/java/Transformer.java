@@ -47,7 +47,7 @@ public class Transformer implements ClassFileTransformer {
             Label l0 = new Label();
             mv.visitLabel(l0);
             mv.visitLineNumber(7, l0);
-            mv.visitInsn(ICONST_2); // 修改为2，即getNum方法返回值修改成了2
+            mv.visitInsn(ICONST_5); // 修改为2，即getNum方法返回值修改成了2
             mv.visitInsn(IRETURN);
             Label l1 = new Label();
             mv.visitLabel(l1);

@@ -1,3 +1,5 @@
+import time.TimeTransForm;
+
 import java.lang.instrument.Instrumentation;
 import java.lang.instrument.UnmodifiableClassException;
 
@@ -9,6 +11,7 @@ public class AgentMain {
 
     /**
      * 可以再main方法执行前或者执行后任意时间点调用
+     *
      * @param args
      * @param ins
      */
@@ -21,7 +24,15 @@ public class AgentMain {
                 ins.retransformClasses(temp);
             }
         }
-        instrumentation=ins;
+
+//        for (Class<?> temp : allLoadedClasses) {
+//            if (temp.getName().equals("TestClass1")) {
+//                System.out.println(">>>apply transformer");
+//                ins.addTransformer(new TimeTransForm(), true);
+//                ins.retransformClasses(temp);
+//            }
+//        }
+        instrumentation = ins;
     }
 
     public static void initialize() {
