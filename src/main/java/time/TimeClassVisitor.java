@@ -25,7 +25,8 @@ public class TimeClassVisitor extends ClassVisitor{
     public MethodVisitor visitMethod(int access, String name, String desc, String signature, String[] exceptions) {
         MethodVisitor mv = cv.visitMethod(access, name, desc, signature, exceptions);
         if(mv!=null && !name.equals("<init>")){
-            mv=new TimeMethodVisitor(mv);
+//            mv=new TimeMethodVisitor(mv);
+           mv=new TimeAdviceAdapter(Opcodes.ASM6,mv,access,name,desc);
         }
         return mv;
     }
