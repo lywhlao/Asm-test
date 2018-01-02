@@ -17,13 +17,13 @@ public class MainClass {
         int num = new TestClass1().getNum();
         System.out.println(">>>1.getNum="+num);
 
+
         Thread.sleep(1000);
         AgentMain.initialize();
 
-        TestOrigin testOrigin=new TestOrigin();
-        testOrigin.m();
-
-//        int num2 = new TestClass1().getNum();
-//        System.out.println(">>>2.getNum="+num2);
+//        TestOrigin testOrigin=new TestOrigin();
+//        testOrigin.m();
+        int num2 = new TestClass1().getNum();
+        System.out.println(">>>2.getNum="+num2);
     }
 }
